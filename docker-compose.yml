@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  iku:
+    image: iku:latest
+    container_name: iku
+    environment:
+      - LICENSE=/license.json
+    volumes:
+      - /home/iku/docker/config/license.json:/license.json
+      - /home/iku/data:/home/dataiku/dss
+      - /home/iku/jdbc:/home/dataiku/dss/lib/jdbc
+    ports:
+      - 8080:10000
